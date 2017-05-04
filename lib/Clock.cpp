@@ -16,7 +16,11 @@ ClockWindow::ClockWindow() {
     timeDisplay = new TextDisplay(*percentageText, this);
     percentageDisplay = new TextDisplay(*currentTimeText, this);
 
+    timeDisplay->setTextShadowColor("#FFFFFF");
+    timeDisplay->setTextShadowBlur(8);
+    timeDisplay->setTextShadowOffset(0, 2);
     percentageDisplay->setFontSize("80px");
+    percentageDisplay->setTextShadowColor("#FFFFAA");
     layout->addWidget(percentageDisplay);
     layout->addWidget(timeDisplay);
     timer->start(1000);
