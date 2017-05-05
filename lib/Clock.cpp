@@ -7,8 +7,7 @@ ClockWindow::ClockWindow() {
     flags |= Qt::FramelessWindowHint;
     flags |= Qt::WindowStaysOnTopHint;
 
-    startTime = new TimePoint(9);
-    endTime = new TimePoint(18);
+    setTimeBoundaries();
 
     currentTimeText = new QString(getTime().c_str());
     percentageText = new QString(getPercentage().c_str());
@@ -76,6 +75,7 @@ std::string ClockWindow::getPercentage() {
 
     if (elapsedPercentage > 100) {
         elapsedPercentage = 100;
+        setTimeBoundaries();
     } else if (elapsedPercentage < 0) {
         elapsedPercentage = 0;
     }
@@ -94,4 +94,9 @@ std::string ClockWindow::getTime() {
 
     strftime(text, 11, "%I:%M:%S%p", currentTimeInfo);
     return text;
+}
+
+void ClockWindow::setTimeBoundaries() {
+    startTime = new TimePoint(startHour);
+    endTime = new TimePoint(endHour);
 }
