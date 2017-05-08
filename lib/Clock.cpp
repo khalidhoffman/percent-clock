@@ -25,10 +25,13 @@ ClockWindow::ClockWindow() {
     timer->start(1000);
     quitAction->setShortcut(QWidget::tr("Ctrl+Q"));
 
+    QRect rec = QApplication::desktop()->availableGeometry();
+    int screenHeight = rec.height();
+    int screenWidth = rec.width();
 
     addAction(quitAction);
-    move(1280, 120);
-    resize(240, 240);
+    resize(windowWidth, windowHeight);
+    move(screenWidth - (windowWidth + 60), screenHeight - (windowHeight + 60));
     setLayout(layout);
     setWindowTitle(appTitle);
     setStyleSheet("background:transparent;");

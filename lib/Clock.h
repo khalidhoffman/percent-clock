@@ -33,6 +33,8 @@ private:
     TimePoint *startTime;
     int startHour = 9;
     int endHour = 18;
+    int windowWidth = 240;
+    int windowHeight = 240;
 
     std::string getPercentage();
 
