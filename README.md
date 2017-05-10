@@ -2,7 +2,7 @@
 A simple clock that displays time in percentages relative to the duration between 9am and 6pm.
 
 ## How do I adjust the times?
-[These values are hard-coded](./lib/clock.cpp#L10-11) for now. 
+[These values are hard-coded](https://github.com/khalidhoffman/percent-clock/blob/master/lib/Clock.h#L34-L35) for now. 
 
 ## Why?
 
